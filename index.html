@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mark's Cute Homepage</title>
+
+    <link rel="icon" href="icon.png">
+
+    <meta name="description" content="Mark's personal homepage -> developer, C++ and Rust enthusiast, and reverse engineering enjoyer.">
+    <meta name="keywords" content="Mark, liebe, fours, developer, C++, Rust, reverse engineering">
+
+    <style>
+        :root {
+            --bg: #e8e8e8;
+            --card: rgba(255, 255, 255, 0.72);
+            --text: #171717;
+            --muted: #666;
+            --teal: #11aaa7;
+            --green: #74ce0d;
+            --pink: #ff6b9d;
+            --border: rgba(255, 255, 255, 0.8);
+            --shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+
+            display: grid;
+            place-items: center;
+
+            padding: 24px;
+
+            background:
+                radial-gradient(circle at 15% 20%, rgba(17, 170, 167, 0.12), transparent 30%),
+                radial-gradient(circle at 85% 80%, rgba(116, 206, 13, 0.10), transparent 30%),
+                var(--bg);
+
+            color: var(--text);
+            font-family: "Trebuchet MS", system-ui, sans-serif;
+            font-size: 18px;
+            line-height: 1.6;
+
+            overflow: hidden;
+        }
+
+        /* Soft background decoration */
+
+        .hearts {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+
+            color: var(--teal);
+            font-size: clamp(24px, 3vw, 48px);
+            opacity: 0.12;
+
+            user-select: none;
+
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .heart:nth-child(even) {
+            color: var(--pink);
+        }
+
+        .heart:nth-child(3n) {
+            color: var(--green);
+        }
+
+        .heart:nth-child(1)  { top: 8%;  left: 8%;  animation-delay: -1s; }
+        .heart:nth-child(2)  { top: 15%; left: 48%; animation-delay: -4s; }
+        .heart:nth-child(3)  { top: 10%; left: 88%; animation-delay: -2s; }
+        .heart:nth-child(4)  { top: 34%; left: 18%; animation-delay: -6s; }
+        .heart:nth-child(5)  { top: 28%; left: 78%; animation-delay: -3s; }
+        .heart:nth-child(6)  { top: 48%; left: 6%;  animation-delay: -7s; }
+        .heart:nth-child(7)  { top: 55%; left: 92%; animation-delay: -2s; }
+        .heart:nth-child(8)  { top: 72%; left: 14%; animation-delay: -5s; }
+        .heart:nth-child(9)  { top: 80%; left: 82%; animation-delay: -1s; }
+        .heart:nth-child(10) { top: 88%; left: 38%; animation-delay: -4s; }
+        .heart:nth-child(11) { top: 65%; left: 54%; animation-delay: -6s; }
+        .heart:nth-child(12) { top: 22%; left: 62%; animation-delay: -3s; }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(-8deg);
+            }
+
+            50% {
+                transform: translateY(-15px) rotate(8deg);
+            }
+        }
+
+        /* Main content */
+
+        main {
+            position: relative;
+            z-index: 1;
+
+            width: min(100%, 520px);
+        }
+
+        .card {
+            padding: 42px 38px 34px;
+
+            text-align: center;
+
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 28px;
+
+            box-shadow: var(--shadow);
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            animation: appear 0.7s ease-out both;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.98);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Logo */
+
+        .logo {
+            display: block;
+
+            width: min(190px, 65vw);
+            height: auto;
+
+            margin: -10px auto 10px;
+
+            user-select: none;
+            pointer-events: none;
+
+            filter: drop-shadow(0 12px 12px rgba(0, 0, 0, 0.08));
+
+            animation: bounce 4s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0) rotate(-2deg);
+            }
+
+            50% {
+                transform: translateY(-5px) rotate(2deg);
+            }
+        }
+
+        /* Typography */
+
+        h1 {
+            margin: 12px 0 14px;
+
+            font-size: clamp(22px, 5vw, 28px);
+            line-height: 1.25;
+            letter-spacing: -0.5px;
+        }
+
+        .highlight {
+            color: var(--teal);
+        }
+
+        p {
+            margin: 0 auto 22px;
+            color: var(--muted);
+        }
+
+        .intro {
+            max-width: 440px;
+        }
+
+        /* Social links */
+
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+
+            margin-top: 28px;
+        }
+
+        .links a {
+            display: inline-flex;
+            align-items: center;
+
+            padding: 7px 13px;
+
+            border-radius: 999px;
+
+            color: var(--teal);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+
+            transition:
+                color 0.2s ease,
+                background 0.2s ease,
+                transform 0.2s ease;
+        }
+
+        .links a:hover {
+            color: white;
+            background: var(--teal);
+            transform: translateY(-2px);
+        }
+
+        .links a:focus-visible {
+            outline: 3px solid rgba(17, 170, 167, 0.3);
+            outline-offset: 3px;
+        }
+
+        .separator {
+            display: none;
+        }
+
+        /* Tiny footer */
+
+        .footer {
+            margin-top: 24px;
+
+            color: #999;
+            font-size: 13px;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 520px) {
+            body {
+                padding: 16px;
+                overflow-y: auto;
+            }
+
+            .card {
+                padding: 32px 22px 26px;
+                border-radius: 24px;
+            }
+
+            .logo {
+                width: 160px;
+            }
+
+            p {
+                font-size: 16px;
+                line-height: 1.55;
+            }
+
+            .heart {
+                font-size: 28px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="hearts" aria-hidden="true">
+        <span class="heart">♥</span>
+        <span class="heart">♥</span>
+        <span class="heart">♥</span>
+        <span class="heart">♥</span>
+        <span class="heart">♥</span>
+        <span class="heart">♥</span>
+        <span class="heart">♥</span>
+        <span class="heart">♥</span>
+        <span class="heart">♥</span>
+        <span class="heart">♥</span>
+        <span class="heart">♥</span>
+        <span class="heart">♥</span>
+    </div>
+
+    <main>
+        <section class="card">
+
+            <img
+                class="logo"
+                src="frog.png"
+                alt="Cute Frog"
+            >
+
+            <h1>
+                Hi! I'm
+                <span class="highlight">Mark</span>
+                'liebe'
+                <span class="highlight">Fours</span>
+            </h1>
+
+            <p class="intro">
+                I'm a developer who likes
+                <strong>C++</strong>,
+                <strong>Rust</strong>,
+                and reverse engineering.
+                <br>
+                Currently working full-time at
+                <strong>Pickade</strong>
+                on the development of Project X (new MOBA).
+            </p>
+
+            <nav class="links" aria-label="Social links">
+                <a
+                    href="https://github.com/liebetheory"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    github
+                </a>
+
+                <a
+                    href="https://twitter.com/liebetheory"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    twitter
+                </a>
+
+                <a
+                    href="https://steamcommunity.com/id/liebetheory"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    steam
+                </a>
+
+                <a
+                    href="https://t.me/liebetheory"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    telegram
+                </a>
+            </nav>
+
+            <div class="footer">
+                made with 💚 by Mark
+            </div>
+
+        </section>
+    </main>
+
+</body>
+</html>
