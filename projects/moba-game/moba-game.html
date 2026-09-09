@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+
+<title>Mark Fours | League of Crowns</title>
+
+<meta name="description" content="League of Crowns - a new MOBA built in C++ with a custom engine on top of Ogre3D.">
+
+<link rel="icon" href="../../assets/pics/crown_border.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../../assets/css/style.css">
+
+
+</head>
+
+<body>
+<div class="no-select">
+<nav>
+    <div class="nav-inner">
+        <a href="../../index.html" class="logo"><span class="name-fours">MARKFOURS</span>.RU</a>
+
+
+    <div class="nav-links">
+        <a href="../../index.html#about">ABOUT</a>
+        <a href="../../blog.html">BLOG</a>
+        <a href="../../projects.html">PROJECTS</a>
+        <a href="../../index.html#links">LINKS</a>
+    </div>
+</div>
+
+
+</nav>
+
+<header class="hero">
+
+<div class="decoration heart big d2">♥</div>
+<div class="decoration heart d3">♥</div>
+<div class="decoration frog-small d5">🐸</div>
+
+<div class="article-hero-inner">
+
+    <div class="article-hero-content">
+
+        <!-- <a href="../projects.html" class="article-back"> -->
+        <a href="../projects.html" class="hero-button outline">
+            ← BACK TO PROJECTS
+        </a>
+
+        <div class="post-label">
+            GAME DEVELOPMENT · C++
+        </div>
+
+        <h1>League of Crowns</h1>
+
+        <p class="article-description">
+            A new MOBA built from the ground up, with our own game technology
+            sitting on top of Ogre3D.
+        </p>
+
+        <div class="article-meta">
+            <span>WORK PROJECT</span>
+            ·
+            <span>IN DEVELOPMENT</span>
+        </div>
+
+    </div>
+
+    <div class="controller-wrap">
+        <img
+            src="../../assets/pics/crown.png"
+            alt="League of Crowns game controller"
+            class="controller"
+        >
+
+        <div class="sticker">
+          YOU CAN WEAR IT SOON!
+        </div>
+    </div>
+
+</div>
+
+</header>
+</div>
+
+<main>
+
+
+<article class="article">
+
+    <p>
+        <strong>League of Crowns</strong> is a new multiplayer online battle arena
+        I'm working on as a full-time developer at Picarda.
+    </p>
+
+    <p>
+        One of the interesting parts of the project is that we're not just
+        putting a game together on top of an existing engine. A large part
+        of the technology around the game is our own.
+    </p>
+
+    <h2>The engine</h2>
+
+    <p>
+        The project is written primarily in <strong>C++</strong>, with
+        <strong>Ogre3D</strong> providing the underlying rendering technology.
+        On top of that we've been building <strong>our own engine and game framework</strong>
+        around the specific needs of the game.
+    </p>
+
+    <p>
+        Ogre3D handles the lower-level rendering side, while our own code
+        provides the systems that actually make League of Crowns a game:
+        entity management, gameplay, resources, tools, networking and
+        everything tying those pieces together.
+    </p>
+
+    <blockquote>
+        Don't build an engine because you can. Build the parts of an engine
+        that your game actually needs.
+    </blockquote>
+
+    <h2>Why Ogre3D?</h2>
+
+    <p>
+        Ogre3D gives us a solid rendering foundation without forcing the
+        entire architecture of the game to follow the architecture of a
+        massive all-in-one engine.
+    </p>
+
+    <p>
+        That leaves us with a useful middle ground: we can rely on a mature
+        renderer while keeping ownership of the higher-level technology
+        that defines League of Crowns.
+    </p>
+
+    <h2>Multiplayer first</h2>
+
+    <p>
+        Being a MOBA means multiplayer isn't an extra feature bolted onto
+        the game later. It affects almost every important system.
+    </p>
+
+    <p>
+        Gameplay has to behave predictably across machines, state needs to
+        be synchronized, and the client can't simply assume that everything
+        it sees is authoritative.
+    </p>
+
+    <p>
+        That makes seemingly simple gameplay features considerably more
+        interesting once networking enters the picture.
+    </p>
+
+    <h2>Tools matter</h2>
+
+    <p>
+        Another big part of the project is the tooling around the game.
+        Making the actual game is only one part of making a game.
+    </p>
+
+    <p>
+        Good editors, debugging tools, resource pipelines and development
+        utilities make it possible to iterate quickly without turning every
+        small change into an engineering project.
+    </p>
+
+    <h2>Still very much in progress</h2>
+
+    <p>
+        League of Crowns is still being developed, so the technology and
+        the game itself are constantly changing. Systems get rewritten,
+        prototypes get thrown away, and occasionally something works
+        perfectly until someone asks why.
+    </p>
+
+    <p>
+        That's also what makes it interesting to work on. There's a lot of
+        room to experiment with architecture, performance and gameplay
+        while building something that eventually has to survive real
+        players.
+    </p>
+
+    <h2>In-game</h2>
+
+    <p>
+        A couple of screenshots from the game as it currently looks.
+        Everything is still evolving, but this gives a small glimpse of
+        League of Crowns in action.
+    </p>
+
+    <div class="project-screenshots no-select">
+
+        <button
+            class="screenshot-button"
+            type="button"
+            onclick="openScreenshot('assets/pics/concept_scene1.png')"
+            aria-label="Open League of Crowns gameplay concept"
+        >
+            <img
+                src="assets/pics/concept_scene1.png"
+                alt="League of Crowns gameplay concept"
+            >
+        </button>
+
+        <button
+            class="screenshot-button"
+            type="button"
+            onclick="openScreenshot('assets/pics/concept_minimap1.png')"
+            aria-label="Open League of Crowns minimap concept"
+        >
+            <img
+                src="assets/pics/concept_minimap1.png"
+                alt="League of Crowns minimap concept"
+            >
+        </button>
+
+        <button
+            class="screenshot-button"
+            type="button"
+            onclick="openScreenshot('assets/pics/concept_minions1.png')"
+            aria-label="Open League of Crowns minions concept"
+        >
+            <img
+                src="assets/pics/concept_minions1.png"
+                alt="League of Crowns minions concept"
+            >
+        </button>
+
+    </div>
+
+    <div
+        id="screenshot-modal"
+        class="screenshot-modal"
+        onclick="closeScreenshot()"
+        aria-hidden="true"
+    >
+
+        <button
+            class="screenshot-close"
+            type="button"
+            onclick="closeScreenshot(event)"
+            aria-label="Close screenshot"
+        >
+            ×
+        </button>
+
+        <img
+            id="screenshot-full"
+            src=""
+            alt="League of Crowns gameplay screenshot"
+        >
+
+    </div>
+
+    <div class="article-ending no-select">♥</div>
+
+    <p class="article-note no-select">
+        League of Crowns is currently in development at Picarda.
+    </p>
+
+</article>
+
+
+</main>
+
+<footer class="no-select">
+    made with <b>♥</b> by Mark
+</footer>
+
+<script>
+function openScreenshot(src) {
+    const modal = document.getElementById("screenshot-modal");
+    const image = document.getElementById("screenshot-full");
+
+    image.src = src;
+
+    modal.classList.add("open");
+    modal.setAttribute("aria-hidden", "false");
+
+    document.body.style.overflow = "hidden";
+}
+
+function closeScreenshot(event) {
+    if (event) {
+        event.stopPropagation();
+    }
+
+    const modal = document.getElementById("screenshot-modal");
+    const image = document.getElementById("screenshot-full");
+
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden", "true");
+
+    image.src = "";
+
+    document.body.style.overflow = "";
+}
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+        closeScreenshot();
+    }
+});
+</script>
+
+</body>
+</html>
