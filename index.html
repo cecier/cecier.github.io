@@ -1,378 +1,547 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Mark's Cute Homepage</title>
 
-    <link rel="icon" href="icon.png">
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-    <meta name="description" content="Mark's personal homepage -> developer, C++ and Rust enthusiast, and reverse engineering enjoyer.">
-    <meta name="keywords" content="Mark, fours, developer, C++, Rust, reverse engineering">
+<title>Mark Fours</title>
 
-    <style>
-        :root {
-            --bg: #e8e8e8;
-            --card: rgba(255, 255, 255, 0.72);
-            --text: #171717;
-            --muted: #666;
-            --teal: #11aaa7;
-            --green: #74ce0d;
-            --pink: #ff6b9d;
-            --border: rgba(255, 255, 255, 0.8);
-            --shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
-        }
+<meta
+    name="description"
+    content="Mark's personal homepage -> developer, C++ and Rust enthusiast, and reverse engineering enjoyer."
+>
 
-        * {
-            box-sizing: border-box;
-        }
+<link rel="icon" href="assets/pics/icon.png">
 
-        html {
-            scroll-behavior: smooth;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        body {
-            min-height: 100vh;
-            margin: 0;
+<link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Roboto+Mono:wght@500&display=swap"
+    rel="stylesheet"
+>
 
-            display: grid;
-            place-items: center;
+<link rel="stylesheet" href="assets/css/style.css">
 
-            padding: 24px;
 
-            background:
-                radial-gradient(circle at 15% 20%, rgba(17, 170, 167, 0.12), transparent 30%),
-                radial-gradient(circle at 85% 80%, rgba(116, 206, 13, 0.10), transparent 30%),
-                var(--bg);
-
-            color: var(--text);
-            font-family: "Trebuchet MS", system-ui, sans-serif;
-            font-size: 18px;
-            line-height: 1.6;
-
-            overflow: hidden;
-        }
-
-        /* Soft background decoration */
-
-        .hearts {
-            position: fixed;
-            inset: 0;
-            z-index: 0;
-            pointer-events: none;
-            overflow: hidden;
-        }
-
-        .heart {
-            position: absolute;
-
-            color: var(--teal);
-            font-size: clamp(24px, 3vw, 48px);
-            opacity: 0.12;
-
-            user-select: none;
-
-            animation: float 8s ease-in-out infinite;
-        }
-
-        .heart:nth-child(even) {
-            color: var(--pink);
-        }
-
-        .heart:nth-child(3n) {
-            color: var(--green);
-        }
-
-        .heart:nth-child(1)  { top: 8%;  left: 8%;  animation-delay: -1s; }
-        .heart:nth-child(2)  { top: 15%; left: 48%; animation-delay: -4s; }
-        .heart:nth-child(3)  { top: 10%; left: 88%; animation-delay: -2s; }
-        .heart:nth-child(4)  { top: 34%; left: 18%; animation-delay: -6s; }
-        .heart:nth-child(5)  { top: 28%; left: 78%; animation-delay: -3s; }
-        .heart:nth-child(6)  { top: 48%; left: 6%;  animation-delay: -7s; }
-        .heart:nth-child(7)  { top: 55%; left: 92%; animation-delay: -2s; }
-        .heart:nth-child(8)  { top: 72%; left: 14%; animation-delay: -5s; }
-        .heart:nth-child(9)  { top: 80%; left: 82%; animation-delay: -1s; }
-        .heart:nth-child(10) { top: 88%; left: 38%; animation-delay: -4s; }
-        .heart:nth-child(11) { top: 65%; left: 54%; animation-delay: -6s; }
-        .heart:nth-child(12) { top: 22%; left: 62%; animation-delay: -3s; }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0) rotate(-8deg);
-            }
-
-            50% {
-                transform: translateY(-15px) rotate(8deg);
-            }
-        }
-
-        /* Main content */
-
-        main {
-            position: relative;
-            z-index: 1;
-
-            width: min(100%, 520px);
-        }
-
-        .card {
-            padding: 42px 38px 34px;
-
-            text-align: center;
-
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 28px;
-
-            box-shadow: var(--shadow);
-
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-
-            animation: appear 0.7s ease-out both;
-        }
-
-        @keyframes appear {
-            from {
-                opacity: 0;
-                transform: translateY(20px) scale(0.98);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        /* Logo */
-
-        .logo {
-            display: block;
-
-            width: min(250px, 65vw);
-            height: auto;
-
-            margin: -10px auto 10px;
-
-            user-select: none;
-            pointer-events: none;
-
-            filter: drop-shadow(0 12px 12px rgba(0, 0, 0, 0.08));
-
-            animation: bounce 4s ease-in-out infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0) rotate(-2deg);
-            }
-
-            50% {
-                transform: translateY(-5px) rotate(2deg);
-            }
-        }
-
-        /* Typography */
-
-        h1 {
-            margin: 12px 0 14px;
-
-            font-size: clamp(22px, 5vw, 28px);
-            line-height: 1.25;
-            letter-spacing: -0.5px;
-        }
-
-        .highlight {
-            color: var(--teal);
-        }
-
-        p {
-            margin: 0 auto 22px;
-            color: var(--muted);
-        }
-
-        .intro {
-            max-width: 440px;
-        }
-
-        /* Social links */
-
-        .links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 8px;
-
-            margin-top: 28px;
-        }
-
-        .links a {
-            display: inline-flex;
-            align-items: center;
-
-            padding: 7px 13px;
-
-            border-radius: 999px;
-
-            color: var(--teal);
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 15px;
-
-            transition:
-                color 0.2s ease,
-                background 0.2s ease,
-                transform 0.2s ease;
-        }
-
-        .links a:hover {
-            color: white;
-            background: var(--teal);
-            transform: translateY(-2px);
-        }
-
-        .links a:focus-visible {
-            outline: 3px solid rgba(17, 170, 167, 0.3);
-            outline-offset: 3px;
-        }
-
-        .separator {
-            display: none;
-        }
-
-        /* Tiny footer */
-
-        .footer {
-            margin-top: 24px;
-
-            color: #999;
-            font-size: 13px;
-        }
-
-        /* Mobile */
-
-        @media (max-width: 520px) {
-            body {
-                padding: 16px;
-                overflow-y: auto;
-            }
-
-            .card {
-                padding: 32px 22px 26px;
-                border-radius: 24px;
-            }
-
-            .logo {
-                width: 160px;
-            }
-
-            p {
-                font-size: 16px;
-                line-height: 1.55;
-            }
-
-            .heart {
-                font-size: 28px;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                scroll-behavior: auto !important;
-            }
-        }
-    </style>
 </head>
 
 <body>
 
-    <div class="hearts" aria-hidden="true">
-        <span class="heart">♥</span>
-        <span class="heart">♥</span>
-        <span class="heart">♥</span>
-        <span class="heart">♥</span>
-        <span class="heart">♥</span>
-        <span class="heart">♥</span>
-        <span class="heart">♥</span>
-        <span class="heart">♥</span>
-        <span class="heart">♥</span>
-        <span class="heart">♥</span>
-        <span class="heart">♥</span>
-        <span class="heart">♥</span>
+
+<!-- NAV -->
+
+<nav>
+    <div class="nav-inner">
+
+        <a href="index.html" class="logo">
+            MARK<span>FOURS</span>.RU
+        </a>
+
+        <div class="nav-links">
+
+            <a href="#about">
+                ABOUT
+            </a>
+
+            <a href="blog/index.html">
+                BLOG
+            </a>
+
+            <a href="projects/index.html">
+                PROJECTS
+            </a>
+
+            <a href="#links">
+                LINKS
+            </a>
+
+        </div>
+
+    </div>
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+    <!-- Decorative frogs -->
+
+    <div class="decoration frog-small d1">
+        🐸
     </div>
 
-    <main>
-        <section class="card">
+    <div class="decoration frog-tiny d4">
+        🐸
+    </div>
+
+    <div class="decoration frog-small d8">
+        🐸
+    </div>
+
+
+    <!-- Decorative hearts -->
+
+    <div class="decoration heart big d2">
+        ♥
+    </div>
+
+    <div class="decoration heart small d3">
+        ♥
+    </div>
+
+    <div class="decoration heart d5">
+        ♥
+    </div>
+
+    <div class="decoration heart small d6">
+        ♥
+    </div>
+
+    <div class="decoration heart d7">
+        ♥
+    </div>
+
+
+    <div class="hero-inner">
+
+        <div class="hero-text">
+
+            <div class="eyebrow">
+                HELLO, INTERNET!
+            </div>
+
+            <h1>
+                I'm Mark.
+            </h1>
+
+            <p class="hero-description">
+                Developer, C++ and Rust enjoyer, reverse engineering
+                enthusiast, and occasional frog caretaker.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a
+                    href="blog/index.html"
+                    class="hero-button"
+                >
+                    READ MY BLOG
+                </a>
+
+                <a
+                    href="projects/index.html"
+                    class="hero-button outline"
+                >
+                    SEE MY STUFF
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="frog-wrap">
 
             <img
-                class="logo"
-                src="frog_cells.png"
+                class="frog"
+                src="assets/pics/frog_cells.png"
                 alt="Frog"
             >
 
-            <h1>
-                Hi! I'm
-                <span class="highlight">Mark</span>
-                'Cecier'
-                <span class="highlight">Fours</span>
-            </h1>
+            <div class="sticker">
+                VERY IMPORTANT FROG!
+            </div>
 
-            <p class="intro">
-                I'm a developer who likes
-                <strong>C++</strong>,
-                <strong>Rust</strong>,
-                and reverse engineering.
+        </div>
+
+    </div>
+
+</header>
+
+
+<main>
+
+    <!-- ABOUT -->
+
+    <section
+        class="section"
+        id="about"
+    >
+
+        <div class="section-heading">
+
+            <h2>
+                About me
+            </h2>
+
+            <span>
+                // WHO IS THIS GUY?
+            </span>
+
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="card">
+
+                <p>
+                    I'm Mark "Cecier" Fours, a developer who likes
+                    low-level programming, game development and taking
+                    things apart to figure out how they work.
+                </p>
+
                 <br>
-                Currently working full-time at
-                <strong>Pickade</strong>
-                on the development of Project X (new MOBA).
+
+                <p>
+                    I mostly spend my time with C++, Rust, reverse
+                    engineering and various questionable side projects.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <ul class="mini-list">
+
+                    <li>
+                        <b>Currently</b><br>
+                        Working on Project X
+                    </li>
+
+                    <li>
+                        <b>Job</b><br>
+                        Full-time developer at Picarda
+                    </li>
+
+                    <li>
+                        <b>Interests</b><br>
+                        C++ · Rust · RE · Games
+                    </li>
+
+                    <li>
+                        <b>Animal</b><br>
+                        Frog
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BLOG PREVIEW -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <h2>
+                Blog
+            </h2>
+
+            <span>
+                // THOUGHTS & NOTES
+            </span>
+
+        </div>
+
+
+        <div class="card">
+
+            <p>
+                I occasionally write about programming, reverse
+                engineering, Rust, C++, games and other things that
+                probably should have remained inside my head.
             </p>
 
-            <nav class="links" aria-label="Social links">
+            <br>
+
+            <a
+                href="blog/index.html"
+                class="hero-button"
+            >
+                GO TO BLOG →
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS PREVIEW -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <h2>
+                Projects
+            </h2>
+
+            <span>
+                // THINGS I'M BUILDING
+            </span>
+
+        </div>
+
+
+        <div class="project-list">
+
+            <a
+                class="project"
+                href="projects/index.html"
+            >
+
+                <div>
+
+                    <h3>
+                        Project X
+                    </h3>
+
+                    <p>
+                        A new MOBA I'm working on at Picarda.
+                    </p>
+
+                </div>
+
+                <span class="project-tag">
+                    CURRENT WORK
+                </span>
+
+            </a>
+
+
+            <a
+                class="project"
+                href="projects/index.html"
+            >
+
+                <div>
+
+                    <h3>
+                        Random C++ Things
+                    </h3>
+
+                    <p>
+                        Experiments, tools, libraries and other
+                        questionable C++ activities.
+                    </p>
+
+                </div>
+
+                <span class="project-tag">
+                    C++
+                </span>
+
+            </a>
+
+
+            <!-- <a
+                class="project"
+                href="projects/index.html"
+            >
+
+                <div>
+
+                    <h3>
+                        Rust Stuff
+                    </h3>
+
+                    <p>
+                        Small projects made while exploring Rust.
+                    </p>
+
+                </div>
+
+                <span class="project-tag">
+                    RUST
+                </span>
+
+            </a>
+
+        </div> -->
+
+
+        <div
+            style="
+                margin-top: 25px;
+                text-align: center;
+            "
+        >
+
+            <a
+                href="projects/index.html"
+                class="hero-button"
+            >
+                VIEW ALL PROJECTS →
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- STACK -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <h2>
+                Stuff I use
+            </h2>
+
+            <span>
+                // THE TOOLBOX
+            </span>
+
+        </div>
+
+
+        <div class="stack">
+
+            <span class="tag">
+                C++
+            </span>
+
+            <span class="tag">
+                Rust
+            </span>
+
+            <span class="tag">
+                C
+            </span>
+
+            <span class="tag">
+                Python
+            </span>
+
+            <span class="tag">
+                Git
+            </span>
+
+            <span class="tag">
+                Linux
+            </span>
+
+            <span class="tag">
+                Reverse Engineering
+            </span>
+
+            <span class="tag">
+                Game Development
+            </span>
+
+            <span class="tag">
+                Systems Programming
+            </span>
+
+            <span class="tag">
+                Assembly
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- LINKS -->
+
+    <section
+        class="links-section"
+        id="links"
+    >
+
+        <div class="links-inner">
+
+            <h2>
+                Find me.
+            </h2>
+
+            <p>
+                Internet places where I occasionally exist.
+            </p>
+
+
+            <div class="link-grid">
+
                 <a
+                    class="link"
                     href="https://github.com/cecier"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    github
+                    GITHUB
                 </a>
 
+
                 <a
+                    class="link"
                     href="https://twitter.com/crabscuttle"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    twitter
+                    X/TWITTER
                 </a>
 
+
                 <a
+                    class="link"
                     href="https://steamcommunity.com/id/cecier"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    steam
+                    STEAM
                 </a>
 
+
                 <a
+                    class="link"
                     href="https://t.me/ceciercash"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    telegram
+                    TELEGRAM
                 </a>
-            </nav>
 
-            <div class="footer">
-                made with 💚 by Mark
+
+                <a
+                    class="link"
+                    href="https://www.twitch.tv/caketheorist"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    TWITCH
+                </a>
+
             </div>
 
-        </section>
-    </main>
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+    made with <b>♥</b> by Mark
+</footer>
+
 
 </body>
 </html>
