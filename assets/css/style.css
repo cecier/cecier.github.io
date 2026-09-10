@@ -67,20 +67,38 @@ gap:25px
 
 .nav-links{
 display:flex;
-gap:25px;
+gap:15px;
 font-family:"Roboto Mono",monospace;
-font-size:11px
+font-size:15px
 }
 
 .nav-links a{
-opacity:.85;
-transition:opacity .15s,transform .15s
+/*opacity:.85;*/
+/*transition:opacity .15s,transform .15s*/
 }
 
 .nav-links a:hover{
 opacity:1;
-transform:translateY(-2px)
+transform:translateY(-2px);
+color:#f69f14;
 }
+
+/* BLUE LINE */ 
+/*.frog-line{ 
+  flex:1; 
+  min-width:100px; 
+  display:flex; 
+  align-items:center; 
+  justify-content:center; 
+} */
+
+.frog-line img{ 
+  display:block; 
+  width:100%; 
+  height:73px; 
+  /*object-fit:fill; */
+}
+
 
 /* HERO */
 
@@ -131,6 +149,8 @@ position:relative;
 z-index:5;
 width:min(1000px,100%);
 margin:auto;
+margin-top:-30px;
+margin-bottom:-30px;
 display:flex;
 align-items:center;
 justify-content:space-between;
@@ -169,6 +189,7 @@ transform:rotate(8deg)
 
 .eyebrow{
 margin-bottom:25px;
+margin-right:17px;
 font-family:"Roboto Mono",monospace;
 font-size:11px;
 letter-spacing:2px;
@@ -213,6 +234,7 @@ gap:10px
 .hero-button{
 display:inline-block;
 padding:11px 16px;
+margin-right:12px;
 background:#fff;
 color:var(--red);
 border:3px solid #fff;
@@ -223,13 +245,18 @@ transition:transform .15s,box-shadow .15s
 }
 
 .hero-button:hover{
-transform:translate(-2px,-2px);
+transform:translate(-4px,-4px);
 box-shadow:6px 6px 0 rgba(0,0,0,.14)
 }
 
 .hero-button.outline{
 background:transparent;
 color:#fff
+}
+
+.hero-button.outline:hover{
+background:var(--white);
+color:var(--red);
 }
 
 /* HERO DECORATIONS */
@@ -302,11 +329,38 @@ transition:transform .2s
 
 .frog:hover{transform:rotate(-3deg) scale(1.04)}
 
+.crown{
+position:relative;
+z-index:3;
+width:320px;
+max-width:100%;
+filter:drop-shadow(8px 11px 0 rgba(0,0,0,.1)) drop-shadow(0 0 15px rgba(255,255,255,.12));
+transform:rotate(3deg);
+transition:transform .2s
+}
+
+.crown:hover{transform:rotate(-3deg) scale(1.04)}
+
 .sticker{
 position:absolute;
 z-index:4;
 right:45px;
 bottom:25px;
+padding:9px 12px;
+background:#fff;
+color:var(--red);
+border:3px solid var(--red-dark);
+font-size:13px;
+font-weight:900;
+transform:rotate(7deg);
+box-shadow:4px 4px 0 rgba(0,0,0,.12)
+}
+
+.sticker-crown{
+position:absolute;
+z-index:4;
+right:45px;
+bottom:10px;
 padding:9px 12px;
 background:#fff;
 color:var(--red);
