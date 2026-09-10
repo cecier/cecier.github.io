@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+
+<title>Mark Fours | Arizona Games</title>
+
+<meta name="description" content="League of Crowns - a new MOBA built in C++ with a custom engine on top of Ogre3D.">
+
+<link rel="icon" href="../../assets/pics/frog_pixel.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../../assets/css/style.css">
+
+
+</head>
+
+<body>
+<div class="no-select">
+<nav>
+    <div class="nav-inner">
+    <a href="../../index.html" class="logo"><span class="name-fours">MARK</span>FOURS</a>
+
+    <div class="nav-links">
+        <a href="../../index.html#about">ABOUT</a>
+        
+        <a href="../../blog.html">BLOG</a>
+        
+        <a href="../../index.html#projects">PROJECTS</a>
+        
+        <a href="../../index.html#links">LINKS</a>
+    </div>
+</div>
+
+
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+    <!-- Decorative frogs -->
+
+    <div class="decoration frog-small d1">
+        🐸
+    </div>
+
+    <div class="decoration frog-tiny d4">
+        🐸
+    </div>
+
+    <div class="decoration frog-small d8">
+        🐸
+    </div>
+
+
+    <!-- Decorative hearts -->
+
+    <div class="decoration heart big d2">
+        ♥
+    </div>
+
+    <div class="decoration heart small d3">
+        ♥
+    </div>
+
+    <div class="decoration heart d5">
+        ♥
+    </div>
+
+    <div class="decoration heart small d6">
+        ♥
+    </div>
+
+    <div class="decoration heart d7">
+        ♥
+    </div>
+
+
+    <div class="hero-inner">
+
+        <div class="hero-text">
+            <a
+                href="../../index.html#projects"
+                class="hero-button outline"
+            >
+                ← BACK HOME
+            </a> <br><br>
+
+            <div class="eyebrow">
+                GAME DEVELOPMENT
+            </div>
+
+            <div class="eyebrow">
+                C++
+            </div>
+
+            <div class="eyebrow">
+                PAWN
+            </div>
+
+            <h1>ArizonaGames <br>and its <br>AriozonaRP</h1>
+
+            <p class="hero-description">
+                Game development studio focused on creating multiplayer game projects, including ArizonaRP.
+            </p>
+
+            <div class="eyebrow">
+                WORK PROJECT
+            </div>
+
+            <div class="eyebrow">
+                STILL ALIVE
+            </div>
+            
+
+        </div>
+
+        <div class="frog-wrap">
+
+            <img
+                class="crown no-select"
+                src="../../assets/pics/arizonagtasa.png"
+                alt="GTASA"
+            >
+            
+            <div class="sticker-crown">
+                AVAILABLE FOR PLAY
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+</div>
+
+
+</header>
+</div>
+
+<main>
+
+
+<article class="article">
+
+    <p>
+    <strong>Arizona Games</strong> is a multiplayer game project I worked on
+    as a full-time developer. My work was primarily focused on
+    the technology surrounding the game, particularly the <strong>game
+    launcher and backend infrastructure</strong>.
+</p>
+
+<p>
+    While the game itself is built around its own technology stack, the
+    launcher and backend are responsible for connecting the different parts
+    of the ecosystem together. This includes handling game distribution,
+    updates, communication with backend services and the infrastructure
+    required to support the client.
+</p>
+
+<h2>The launcher</h2>
+
+<p>
+    One of the main areas I worked on was the <strong>Arizona Games
+    launcher</strong>. The launcher acts as the entry point for players,
+    taking care of the tasks that need to happen before the game itself
+    starts.
+</p>
+
+<p>
+    This includes things such as <strong>version management, game updates,
+    resource handling and communication with backend services</strong>.
+    Building a launcher for an online game means that reliability matters:
+    it needs to correctly handle different client versions, interrupted
+    updates and various edge cases without getting in the player's way.
+</p>
+
+<h2>The backend</h2>
+
+<p>
+    I also worked on the <strong>backend services</strong> supporting the
+    launcher and game ecosystem. The backend provides the services required
+    for clients to communicate with the infrastructure behind the game.
+</p>
+
+<p>
+    A major part of the work was making sure that the launcher and backend
+    worked together reliably. Client-side functionality often depends on
+    backend state, which means that seemingly simple features can require
+    careful consideration of APIs, versioning, error handling and
+    communication between services.
+</p>
+
+<blockquote>
+    A launcher is more than a button that starts a game. It is the bridge
+    between the player, the client and the infrastructure behind it.
+</blockquote>
+
+<h2>Multiplayer infrastructure</h2>
+
+<p>
+    Because Arizona Games is an online multiplayer project, backend
+    infrastructure is an important part of the overall architecture.
+    Clients cannot simply operate independently - they need to communicate
+    with services that manage and provide information required by the game
+    ecosystem.
+</p>
+
+<p>
+    This makes reliability and predictable communication particularly
+    important. Failures need to be handled gracefully, and the client
+    needs to be able to recover from problems such as unavailable services,
+    interrupted downloads or outdated game versions.
+</p>
+
+<h2>Updates and distribution</h2>
+
+<p>
+    Another important aspect of the launcher is <strong>game distribution
+    and updating</strong>. Players should be able to start the launcher and
+    get the correct version of the game without having to manually manage
+    files or understand what changed between releases.
+</p>
+
+<p>
+    This requires more than simply downloading a new executable. The
+    launcher has to understand what the client currently has, determine
+    what needs to be updated and communicate with the backend to retrieve
+    the required data.
+</p>
+
+<h2>Still very much in progress</h2>
+
+<p>
+    Arizona Games was an evolving project, which made the work particularly
+    interesting from an engineering perspective. Both the game and the
+    surrounding infrastructure were continuously changing as new
+    requirements appeared and existing systems were improved.
+</p>
+
+<p>
+    Working on the launcher and backend gave me the opportunity to deal with
+    the less visible parts of an online game: infrastructure, APIs,
+    distribution, updates, client-server communication and the tooling
+    required to make the whole system work together reliably.
+</p>
+
+<h2>In-game</h2>
+
+<p>
+    A couple of screenshots from the project as it currently looks.
+    They provide a small glimpse of Arizona Games and the technology that
+    the launcher and backend were built to support.
+</p>
+
+
+    <div class="project-screenshots no-select">
+
+        <button
+            class="screenshot-button"
+            type="button"
+            onclick="openScreenshot('assets/pics/render1.jpg')"
+            aria-label="Open ArizonaRP screenshot"
+        >
+            <img
+                src="assets/pics/render1.jpg"
+                alt="ArizonaRP screenshot"
+            >
+        </button>
+
+        <button
+            class="screenshot-button"
+            type="button"
+            onclick="openScreenshot('assets/pics/screen1.jpg')"
+            aria-label="Open ArizonaRP screenshot"
+        >
+            <img
+                src="assets/pics/screen1.jpg"
+                alt="ArizonaRP screenshot"
+            >
+        </button>
+
+        <button
+            class="screenshot-button"
+            type="button"
+            onclick="openScreenshot('assets/pics/screen2.jpg')"
+            aria-label="Open ArizonaRP screenshot"
+        >
+            <img
+                src="assets/pics/screen2.jpg"
+                alt="ArizonaRP screenshot"
+            >
+        </button>
+
+    </div>
+
+    <div
+        id="screenshot-modal"
+        class="screenshot-modal"
+        onclick="closeScreenshot()"
+        aria-hidden="true"
+    >
+
+        <button
+            class="screenshot-close"
+            type="button"
+            onclick="closeScreenshot(event)"
+            aria-label="Close screenshot"
+        >
+            ×
+        </button>
+
+        <img
+            id="screenshot-full"
+            src=""
+            alt="ArizonaRP gameplay screenshot"
+        >
+
+    </div>
+
+    <div class="article-ending no-select">♥</div>
+
+    <p class="article-note no-select">
+        It was fun to play, and even more enjoyable to develop systems and gameplay for Arizona's amazing players.
+    </p>
+
+</article>
+
+
+</main>
+
+<footer class="no-select">
+    made with <b>♥</b> by Mark
+</footer>
+
+<script>
+function openScreenshot(src) {
+    const modal = document.getElementById("screenshot-modal");
+    const image = document.getElementById("screenshot-full");
+
+    image.src = src;
+
+    modal.classList.add("open");
+    modal.setAttribute("aria-hidden", "false");
+
+    document.body.style.overflow = "hidden";
+}
+
+function closeScreenshot(event) {
+    if (event) {
+        event.stopPropagation();
+    }
+
+    const modal = document.getElementById("screenshot-modal");
+    const image = document.getElementById("screenshot-full");
+
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden", "true");
+
+    image.src = "";
+
+    document.body.style.overflow = "";
+}
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+        closeScreenshot();
+    }
+});
+</script>
+
+</body>
+</html>
