@@ -534,12 +534,29 @@ color:var(--muted);
 font-size:13px
 }
 
+.project-tags{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+    align-items:center;
+    gap:5px;
+}
+
 .project-tag{
-padding:7px 9px;
-background:var(--red);
-color:#fff;
-font-family:"Roboto Mono",monospace;
-font-size:10px
+    padding:6px 8px;
+    background:var(--red);
+    color:var(--white);
+    border:1px solid var(--red);
+    font-family:"Roboto Mono",monospace;
+    font-size:11px;
+    line-height:1;
+    white-space:nowrap;
+}
+
+.project-tag.current{
+    background:var(--white);
+    color:var(--red);
+    border:1px solid var(--red);
 }
 
 /* STACK */
@@ -547,19 +564,17 @@ font-size:10px
 .stack{
 display:flex;
 flex-wrap:wrap;
-gap:8px
+gap:5px
 }
 
 .tag{
-padding:8px 11px;
-background:#fff;
-border:1px solid var(--border);
+padding:6px 8px;
+background:var(--red);
+border:1px solid var(--red);
 font-family:"Roboto Mono",monospace;
-font-size:11px
+font-size:11px;
+color:var(--white);
 }
-
-.tag:nth-child(3n){transform:rotate(1deg)}
-.tag:nth-child(3n+1){transform:rotate(-1deg)}
 
 /* LINKS */
 
