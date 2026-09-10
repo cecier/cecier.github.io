@@ -362,6 +362,22 @@ transform:rotate(7deg);
 box-shadow:4px 4px 0 rgba(0,0,0,.12)
 }
 
+.sticker-detective-one{
+right:110px;
+bottom:250px;
+transform:rotate(9deg);
+}
+.sticker-detective-two{
+right:90px;
+bottom:200px;
+transform:rotate(4deg);
+}
+.sticker-detective-three{
+right:50px;
+bottom:150px;
+transform:rotate(7deg);
+}
+
 main{
 position:relative;
 z-index:6
